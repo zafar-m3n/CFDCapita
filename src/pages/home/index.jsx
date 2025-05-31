@@ -1,7 +1,12 @@
 import React from "react";
+import LiquidityProviders from "./components/LiquidityProviders";
 
 const HomePage = () => {
-  return <div>HomePage</div>;
+  return (
+    <div>
+      <LiquidityProviders />
+    </div>
+  );
 };
 
 export default HomePage;
