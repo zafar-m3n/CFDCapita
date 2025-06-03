@@ -70,28 +70,8 @@ export default function Footer() {
                 </Link>
               </li>
               <li>
-                <Link to="/legal/kyc" className="hover:text-accent">
-                  KYC Policy
-                </Link>
-              </li>
-              <li>
                 <Link to="/legal/privacy" className="hover:text-accent">
                   Privacy Policy
-                </Link>
-              </li>
-              <li>
-                <Link to="/legal/risk-disclosure" className="hover:text-accent">
-                  Risk Disclosure
-                </Link>
-              </li>
-              <li>
-                <Link to="/legal/referral" className="hover:text-accent">
-                  Referral Agreement
-                </Link>
-              </li>
-              <li>
-                <Link to="/legal/aml" className="hover:text-accent">
-                  AML Policy
                 </Link>
               </li>
             </ul>
