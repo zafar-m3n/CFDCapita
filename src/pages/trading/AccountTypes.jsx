@@ -12,6 +12,8 @@ const AccountTypes = () => {
         button1="Open Account"
         button2="Try Demo Account"
         image={accountHeroImage}
+        // alignImageRightBottom
+        imageSize="w-full max-w-2xl"
       />
       <AccountTypesList />
     </div>

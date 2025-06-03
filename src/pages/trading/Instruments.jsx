@@ -10,6 +10,8 @@ const Instruments = () => {
         title="Expand Your Opportunities"
         subtitle="We know that a successful trading strategy thrives on variety. That’s why we provide access to a wide range of trading instruments across multiple markets."
         image={instrumentsHero}
+        // alignImageRightBottom
+        imageSize="w-full max-w-2xl"
       />
       <InstrumentsList />
     </div>
