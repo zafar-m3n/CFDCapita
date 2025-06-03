@@ -1,0 +1,120 @@
+import React from "react";
+import Icon from "@/components/ui/Icon";
+
+const accountTypes = [
+  {
+    title: "CFD LITE",
+    price: "$200",
+    details: [
+      "CFDs + Metals + Commodities",
+      "$200 Minimum Deposits",
+      "1:200 Leverage",
+      "Spreads Starting from 1.5 Pips",
+      "No Commissions",
+    ],
+    icon: "mdi:lightbulb-on-outline",
+  },
+  {
+    title: "CFD CLASSIC",
+    price: "$1000",
+    details: [
+      "CFDs + Metals + Commodities",
+      "$1,000 Minimum Deposits",
+      "1:500 Leverage",
+      "Spreads Starting from 1.3 Pips",
+      "No Commissions",
+    ],
+    icon: "mdi:airplane",
+  },
+  {
+    title: "CFD PRO",
+    price: "$3000",
+    details: [
+      "All Instruments",
+      "$3,000 Minimum Deposits",
+      "1:200 Leverage",
+      "Spreads Starting from 0.8 Pips",
+      "$5 Commission per lot",
+    ],
+    icon: "mdi:chart-line",
+  },
+  {
+    title: "CFD VIP",
+    price: "$10,000",
+    details: [
+      "All Instruments",
+      "$10,000 Minimum Deposits",
+      "1:100 Leverage",
+      "Spreads Starting from 0.2 Pips",
+      "$3 Commission per lot",
+    ],
+    icon: "mdi:rocket",
+  },
+  {
+    title: "CFD MAX",
+    price: "$20,000",
+    details: [
+      "All Instruments",
+      "$20,000 Minimum Deposits",
+      "1:200 Leverage",
+      "Spreads Starting from 0.1 Pips",
+      "Commission Rebates",
+    ],
+    icon: "mdi:finance",
+  },
+  {
+    title: "CFD ISLAMIC",
+    price: "$500",
+    details: [
+      "CFDs + Metals + Commodities",
+      "$500 Minimum Deposits",
+      "1:400 Leverage",
+      "Swap Free",
+      "Spreads Starting from 2 Pips",
+    ],
+    icon: "mdi:earth",
+  },
+];
+
+const AccountTypesList = () => {
+  return (
+    <div className="bg-yellow-50 rounded-[48px] p-8 md:p-16">
+      <h2 className="text-4xl font-bold mb-12 text-center">Choose the Right Account Type for You!</h2>
+      <div className="max-w-5xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        {accountTypes.map((account, index) => (
+          <div
+            key={index}
+            className="bg-white rounded-lg shadow-md p-6 text-center flex flex-col items-center transition-transform hover:scale-105"
+          >
+            {/* Icon */}
+            <div className="mb-4">
+              <Icon icon={account.icon} width={36} className="text-accent" />
+            </div>
+
+            {/* Title */}
+            <h3 className="text-xl font-bold text-gray-900 mb-2">{account.title}</h3>
+
+            {/* Price */}
+            <div className="text-2xl font-bold bg-accent text-white inline-block px-4 py-1 rounded mb-4">
+              {account.price}
+            </div>
+
+            {/* Details */}
+            <ul className="text-gray-700 text-sm mb-6 space-y-1">
+              {account.details.map((line, i) => (
+                <li key={i}>{line}</li>
+              ))}
+            </ul>
+
+            {/* Button */}
+            <button className="bg-black text-white font-semibold px-6 py-2 rounded hover:opacity-90 transition">
+              Trade Now
+            </button>
+          </div>
+        ))}
+      </div>
+    </div>
+  );
+};
+
+export default AccountTypesList;
