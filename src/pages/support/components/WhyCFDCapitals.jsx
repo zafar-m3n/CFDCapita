@@ -1,5 +1,6 @@
 import React from "react";
 import Icon from "@/components/ui/Icon";
+import AnimatedContent from "@/components/ui/AnimatedContent";
 
 const features = [
   {
@@ -29,14 +30,25 @@ const WhyCFDCapitals = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {features.map((item, index) => (
-          <div
-            key={index}
-            className="bg-gray-50 hover:bg-green-50 rounded-2xl p-8 text-center transition-colors flex flex-col items-center justify-center"
+          <AnimatedContent
+            distance={100}
+            direction="horizontal"
+            reverse={false}
+            config={{ tension: 50, friction: 25 }}
+            initialOpacity={0.0}
+            animateOpacity
+            scale={1.0}
+            threshold={0.1}
           >
-            <Icon icon={item.icon} width={32} className="text-accent mb-4" />
-            <h3 className="text-xl font-bold mb-4">{item.title}</h3>
-            <p className="text-base text-gray-700">{item.description}</p>
-          </div>
+            <div
+              key={index}
+              className="bg-gray-50 hover:bg-green-50 rounded-2xl p-8 text-center transition-colors flex flex-col items-center justify-center"
+            >
+              <Icon icon={item.icon} width={32} className="text-accent mb-4" />
+              <h3 className="text-xl font-bold mb-4">{item.title}</h3>
+              <p className="text-base text-gray-700">{item.description}</p>
+            </div>
+          </AnimatedContent>
         ))}
       </div>
     </div>

@@ -3,6 +3,7 @@ import HeroSection from "@/components/HeroSection";
 import referralsHeroImg from "@/assets/Referrals-min.png";
 import referralsSubImg from "@/assets/referrals.jpg";
 import Icon from "@/components/ui/Icon";
+import AnimatedContent from "@/components/ui/AnimatedContent";
 
 const Referrals = () => {
   return (
@@ -53,59 +54,81 @@ const Referrals = () => {
         </div>
       </div>
 
-      {/* Steps to Partner */}
       <div className="max-w-6xl mx-auto px-6 py-16 text-center">
-        <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-12">Become a Partner of CFD Capitals & Earn</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
-          <div className="bg-gray-50 hover:bg-green-50 rounded-2xl p-6 flex flex-col items-center justify-center">
-            <div className="bg-accent text-primary font-semibold text-xl px-3 py-1 rounded-full mb-4">01</div>
-            <h3 className="text-lg font-bold mb-2">Register & Get IB Link</h3>
+        <AnimatedContent
+          distance={100}
+          direction="vertical"
+          reverse={false}
+          config={{ tension: 50, friction: 25 }}
+          initialOpacity={0.0}
+          animateOpacity
+          scale={1.0}
+          threshold={0.1}
+        >
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-12">
+            Become a Partner of CFD Capitals & Earn
+          </h2>
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+            <div className="bg-gray-50 hover:bg-green-50 rounded-2xl p-6 flex flex-col items-center justify-center">
+              <div className="bg-accent text-primary font-semibold text-xl px-3 py-1 rounded-full mb-4">01</div>
+              <h3 className="text-lg font-bold mb-2">Register & Get IB Link</h3>
+            </div>
+            <div className="bg-gray-50 hover:bg-green-50 rounded-2xl p-6 flex flex-col items-center justify-center">
+              <div className="bg-accent text-primary font-semibold text-xl px-3 py-1 rounded-full mb-4">02</div>
+              <h3 className="text-lg font-bold mb-2">Bring in New Clients</h3>
+            </div>
+            <div className="bg-gray-50 hover:bg-green-50 rounded-2xl p-6 flex flex-col items-center justify-center">
+              <div className="bg-accent text-primary font-semibold text-xl px-3 py-1 rounded-full mb-4">03</div>
+              <h3 className="text-lg font-bold mb-2">Your Clients Start to Trade</h3>
+            </div>
+            <div className="bg-gray-50 hover:bg-green-50 rounded-2xl p-6 flex flex-col items-center justify-center">
+              <div className="bg-accent text-primary font-semibold text-xl px-3 py-1 rounded-full mb-4">04</div>
+              <h3 className="text-lg font-bold mb-2">Earn Commission Income</h3>
+            </div>
           </div>
-          <div className="bg-gray-50 hover:bg-green-50 rounded-2xl p-6 flex flex-col items-center justify-center">
-            <div className="bg-accent text-primary font-semibold text-xl px-3 py-1 rounded-full mb-4">02</div>
-            <h3 className="text-lg font-bold mb-2">Bring in New Clients</h3>
-          </div>
-          <div className="bg-gray-50 hover:bg-green-50 rounded-2xl p-6 flex flex-col items-center justify-center">
-            <div className="bg-accent text-primary font-semibold text-xl px-3 py-1 rounded-full mb-4">03</div>
-            <h3 className="text-lg font-bold mb-2">Your Clients Start to Trade</h3>
-          </div>
-          <div className="bg-gray-50 hover:bg-green-50 rounded-2xl p-6 flex flex-col items-center justify-center">
-            <div className="bg-accent text-primary font-semibold text-xl px-3 py-1 rounded-full mb-4">04</div>
-            <h3 className="text-lg font-bold mb-2">Earn Commission Income</h3>
-          </div>
-        </div>
+        </AnimatedContent>
       </div>
 
-      {/* Become IB Section */}
-      <div className="max-w-6xl mx-auto px-6 py-16 flex flex-col md:flex-row items-center gap-8">
-        <div className="flex-1">
-          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
-            Become an Introducing Broker with CFD Capitals
-          </h2>
-          <p className="text-lg text-gray-700 mb-4">
-            Sign up as an Introducing Broker (IB) with CFD Capitals and give your clients access to premium trading
-            conditions, precise execution, top-tier liquidity, and industry-leading service from experienced
-            professionals.
-          </p>
-          <ul className="space-y-2">
-            <li className="flex items-center gap-2">
-              <Icon icon="mdi:check" width={20} className="text-accent" />
-              <span className="font-semibold">Advanced client reporting</span>
-            </li>
-            <li className="flex items-center gap-2">
-              <Icon icon="mdi:check" width={20} className="text-accent" />
-              <span className="font-semibold">Dedicated Personal Account Managers</span>
-            </li>
-            <li className="flex items-center gap-2">
-              <Icon icon="mdi:check" width={20} className="text-accent" />
-              <span className="font-semibold">Instant commission withdrawals</span>
-            </li>
-          </ul>
+      <AnimatedContent
+        distance={100}
+        direction="horizontal"
+        reverse={false}
+        config={{ tension: 50, friction: 25 }}
+        initialOpacity={0.0}
+        animateOpacity
+        scale={1.0}
+        threshold={0.1}
+      >
+        <div className="max-w-6xl mx-auto px-6 py-16 flex flex-col md:flex-row items-center gap-8">
+          <div className="flex-1">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-4">
+              Become an Introducing Broker with CFD Capitals
+            </h2>
+            <p className="text-lg text-gray-700 mb-4">
+              Sign up as an Introducing Broker (IB) with CFD Capitals and give your clients access to premium trading
+              conditions, precise execution, top-tier liquidity, and industry-leading service from experienced
+              professionals.
+            </p>
+            <ul className="space-y-2">
+              <li className="flex items-center gap-2">
+                <Icon icon="mdi:check" width={20} className="text-accent" />
+                <span className="font-semibold">Advanced client reporting</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <Icon icon="mdi:check" width={20} className="text-accent" />
+                <span className="font-semibold">Dedicated Personal Account Managers</span>
+              </li>
+              <li className="flex items-center gap-2">
+                <Icon icon="mdi:check" width={20} className="text-accent" />
+                <span className="font-semibold">Instant commission withdrawals</span>
+              </li>
+            </ul>
+          </div>
+          <div className="flex-1">
+            <img src={referralsSubImg} alt="Referral Program" className="rounded-lg w-full" />
+          </div>
         </div>
-        <div className="flex-1">
-          <img src={referralsSubImg} alt="Referral Program" className="rounded-lg w-full" />
-        </div>
-      </div>
+      </AnimatedContent>
     </div>
   );
 };
