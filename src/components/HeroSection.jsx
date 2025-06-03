@@ -12,7 +12,6 @@ const HeroSection = ({
 }) => {
   return (
     <div className="relative bg-yellow-50 rounded-b-[48px] overflow-hidden">
-      {/* Background Line Image */}
       <div
         className="absolute inset-0 bg-no-repeat bg-bottom bg-cover opacity-50 rounded-t-[48px]"
         style={{
@@ -21,7 +20,6 @@ const HeroSection = ({
         }}
       ></div>
 
-      {/* Text + Image for Flex Layout */}
       {!alignImageRightBottom && (
         <div className="relative z-10 flex flex-col md:flex-row items-end justify-between max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-xl text-center md:text-left py-16 md:py-24">
@@ -42,14 +40,13 @@ const HeroSection = ({
           </div>
 
           {image && (
-            <div className="mt-10 md:mt-0 md:ms-12">
+            <div className="md:ms-12">
               <img src={image} alt="Hero Visual" className={`${imageSize}`} />
             </div>
           )}
         </div>
       )}
 
-      {/* Image Only (Aligned Bottom-Right) */}
       {alignImageRightBottom && image && (
         <>
           <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 md:py-24 text-center md:text-left">
