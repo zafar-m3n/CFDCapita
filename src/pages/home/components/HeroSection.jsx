@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import depositsImg from "@/assets/deposits.png";
 import lineBg from "@/assets/bg-line.png";
+import AnimatedContent from "@/components/ui/AnimatedContent";
 
 const HeroSection = () => {
   const [users, setUsers] = useState([]);
@@ -22,14 +23,37 @@ const HeroSection = () => {
 
         <div className="relative z-10 grid md:grid-cols-2 gap-12 items-center max-w-7xl mx-auto">
           <div>
-            <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-6">
-              Expand Your Portfolio <br /> with{" "}
-              <span className="bg-lime-400 text-white px-2 py-1 rounded">Premium</span> Brokerage
-            </h1>
-            <p className="text-gray-500 text-base md:text-lg leading-relaxed mb-6">
-              Welcome to CFD Capitals, your gateway to seamless trading. Our advanced brokerage technology and
-              customized services will help you manage your investments with ease.
-            </p>
+            <AnimatedContent
+              distance={100}
+              direction="vertical"
+              reverse={false}
+              config={{ tension: 50, friction: 25 }}
+              initialOpacity={0.0}
+              animateOpacity
+              scale={1.0}
+              threshold={0.1}
+            >
+              <h1 className="text-4xl md:text-5xl font-extrabold leading-tight mb-6">
+                Expand Your Portfolio <br /> with{" "}
+                <span className="bg-lime-400 text-white px-2 py-1 rounded">Premium</span> Brokerage
+              </h1>
+            </AnimatedContent>
+            <AnimatedContent
+              distance={100}
+              direction="vertical"
+              reverse={false}
+              config={{ tension: 50, friction: 25 }}
+              initialOpacity={0.0}
+              animateOpacity
+              scale={1.0}
+              threshold={0.1}
+              delay={0.5}
+            >
+              <p className="text-gray-500 text-base md:text-lg leading-relaxed mb-6">
+                Welcome to CFD Capitals, your gateway to seamless trading. Our advanced brokerage technology and
+                customized services will help you manage your investments with ease.
+              </p>
+            </AnimatedContent>
             <button className="bg-lime-400 text-black font-semibold px-6 py-3 rounded hover:bg-lime-500 transition-all mb-6">
               Get Started
             </button>
@@ -50,7 +74,9 @@ const HeroSection = () => {
           </div>
         </div>
       </section>
-      <div className="w-full bg-lime-400 text-black text-center uppercase font-bold text-3xl p-4 rounded">Road to Your Earnings</div>
+      <div className="w-full bg-lime-400 text-black text-center uppercase font-bold text-3xl p-4 rounded">
+        Road to Your Earnings
+      </div>
     </>
   );
 };

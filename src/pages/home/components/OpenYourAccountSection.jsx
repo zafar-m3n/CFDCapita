@@ -1,4 +1,5 @@
 import React from "react";
+import AnimatedContent from "@/components/ui/AnimatedContent";
 
 const steps = [
   {
@@ -25,11 +26,22 @@ const OpenYourAccountSection = () => {
 
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {steps.map((step, index) => (
-          <div key={index} className="bg-white rounded-2xl shadow-md p-6 flex flex-col items-center space-y-4">
-            <span className="bg-accent text-primary font-bold text-sm rounded py-1 px-3">{step.number}</span>
-            <h3 className="text-lg font-semibold">{step.title}</h3>
-            <p className="text-gray-600 text-sm">{step.description}</p>
-          </div>
+          <AnimatedContent
+            distance={100}
+            direction="horizontal"
+            reverse={false}
+            config={{ tension: 50, friction: 25 }}
+            initialOpacity={0.0}
+            animateOpacity
+            scale={1.0}
+            threshold={0.1}
+          >
+            <div key={index} className="bg-white rounded-2xl shadow-md p-6 flex flex-col items-center space-y-4">
+              <span className="bg-accent text-primary font-bold text-sm rounded py-1 px-3">{step.number}</span>
+              <h3 className="text-lg font-semibold">{step.title}</h3>
+              <p className="text-gray-600 text-sm">{step.description}</p>
+            </div>
+          </AnimatedContent>
         ))}
       </div>
     </section>
