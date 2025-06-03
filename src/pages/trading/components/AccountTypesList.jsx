@@ -1,5 +1,6 @@
 import React from "react";
 import Icon from "@/components/ui/Icon";
+import AnimatedContent from "@/components/ui/AnimatedContent";
 
 const accountTypes = [
   {
@@ -80,35 +81,37 @@ const AccountTypesList = () => {
   return (
     <div className="max-w-5xl mx-auto px-6 py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
       {accountTypes.map((account, index) => (
-        <div
-          key={index}
-          className="bg-yellow-50 rounded-lg shadow-md p-6 text-center flex flex-col items-center transition-transform hover:scale-105"
+        <AnimatedContent
+          distance={100}
+          direction="horizontal"
+          reverse={false}
+          config={{ tension: 50, friction: 25 }}
+          initialOpacity={0.0}
+          animateOpacity
+          scale={1.0}
+          threshold={0.1}
         >
-          {/* Icon */}
-          <div className="mb-4">
-            <Icon icon={account.icon} width={36} className="text-accent" />
+          <div
+            key={index}
+            className="bg-yellow-50 rounded-lg shadow-md p-6 text-center flex flex-col items-center transition-transform hover:scale-105"
+          >
+            <div className="mb-4">
+              <Icon icon={account.icon} width={36} className="text-accent" />
+            </div>
+            <h3 className="text-xl font-bold text-gray-900 mb-2">{account.title}</h3>
+            <div className="text-2xl font-bold bg-accent text-white inline-block px-4 py-1 rounded mb-4">
+              {account.price}
+            </div>
+            <ul className="text-gray-700 text-sm mb-6 space-y-1">
+              {account.details.map((line, i) => (
+                <li key={i}>{line}</li>
+              ))}
+            </ul>
+            <button className="bg-black text-white font-semibold px-6 py-2 rounded hover:opacity-90 transition">
+              Trade Now
+            </button>
           </div>
-
-          {/* Title */}
-          <h3 className="text-xl font-bold text-gray-900 mb-2">{account.title}</h3>
-
-          {/* Price */}
-          <div className="text-2xl font-bold bg-accent text-white inline-block px-4 py-1 rounded mb-4">
-            {account.price}
-          </div>
-
-          {/* Details */}
-          <ul className="text-gray-700 text-sm mb-6 space-y-1">
-            {account.details.map((line, i) => (
-              <li key={i}>{line}</li>
-            ))}
-          </ul>
-
-          {/* Button */}
-          <button className="bg-black text-white font-semibold px-6 py-2 rounded hover:opacity-90 transition">
-            Trade Now
-          </button>
-        </div>
+        </AnimatedContent>
       ))}
     </div>
   );

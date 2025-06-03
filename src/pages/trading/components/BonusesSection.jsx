@@ -1,5 +1,5 @@
-// components/BonusesSection.jsx
 import React from "react";
+import AnimatedContent from "@/components/ui/AnimatedContent";
 
 const bonuses = [
   {
@@ -46,7 +46,6 @@ const steps = [
 const BonusesSection = () => {
   return (
     <div className="w-full bg-black">
-      {/* Top Black Banner */}
       <div className="text-white text-center py-12">
         <h2 className="text-3xl md:text-4xl font-bold mb-4">
           Christmas Bonanza
@@ -55,8 +54,6 @@ const BonusesSection = () => {
         </h2>
         <button className="bg-lime-500 text-black font-semibold py-2 px-6 rounded-md">Enter Now</button>
       </div>
-
-      {/* Light Yellow Bonuses */}
       <div className="bg-yellow-50 py-16 rounded-[48px]">
         <div className="max-w-6xl mx-auto px-4 text-center">
           <h3 className="text-2xl md:text-3xl font-bold mb-10">
@@ -67,11 +64,22 @@ const BonusesSection = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2 gap-8">
             {bonuses.map((bonus, idx) => (
-              <div key={idx} className="bg-white rounded-lg p-6 text-center shadow-sm">
-                <h4 className="text-xl font-bold mb-2">{bonus.title}</h4>
-                <p className="text-gray-700 mb-4">{bonus.description}</p>
-                <button className="bg-lime-500 text-black font-semibold py-2 px-4 rounded-md">{bonus.button}</button>
-              </div>
+              <AnimatedContent
+                distance={100}
+                direction="horizontal"
+                reverse={false}
+                config={{ tension: 50, friction: 25 }}
+                initialOpacity={0.0}
+                animateOpacity
+                scale={1.0}
+                threshold={0.1}
+              >
+                <div key={idx} className="bg-white rounded-lg p-6 text-center shadow-sm">
+                  <h4 className="text-xl font-bold mb-2">{bonus.title}</h4>
+                  <p className="text-gray-700 mb-4">{bonus.description}</p>
+                  <button className="bg-lime-500 text-black font-semibold py-2 px-4 rounded-md">{bonus.button}</button>
+                </div>
+              </AnimatedContent>
             ))}
           </div>
         </div>
@@ -84,13 +92,24 @@ const BonusesSection = () => {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {steps.map((step, idx) => (
-              <div key={idx} className="bg-gray-900 p-6 rounded-lg space-y-2 text-center">
-                <div className="bg-lime-500 text-black text-sm font-semibold p-2 rounded inline-block">
-                  {step.number}
+              <AnimatedContent
+                distance={100}
+                direction="vertical"
+                reverse={false}
+                config={{ tension: 50, friction: 25 }}
+                initialOpacity={0.0}
+                animateOpacity
+                scale={1.0}
+                threshold={0.1}
+              >
+                <div key={idx} className="bg-gray-900 p-6 rounded-lg space-y-2 text-center">
+                  <div className="bg-lime-500 text-black text-sm font-semibold p-2 rounded inline-block">
+                    {step.number}
+                  </div>
+                  <h4 className="text-lg font-bold">{step.title}</h4>
+                  <p className="text-gray-300 text-sm">{step.description}</p>
                 </div>
-                <h4 className="text-lg font-bold">{step.title}</h4>
-                <p className="text-gray-300 text-sm">{step.description}</p>
-              </div>
+              </AnimatedContent>
             ))}
           </div>
         </div>

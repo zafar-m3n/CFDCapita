@@ -7,6 +7,7 @@ import stocksImg from "@/assets/stocks.jpg";
 import indicesImg from "@/assets/indices.jpg";
 import metalsImg from "@/assets/metals.jpg";
 import commoditiesImg from "@/assets/commodities.jpg";
+import AnimatedContent from "@/components/ui/AnimatedContent";
 
 const instruments = [
   {
@@ -52,27 +53,38 @@ const InstrumentsList = () => {
   return (
     <div className="max-w-5xl mx-auto px-6 py-16 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
       {instruments.map((item) => (
-        <div
-          key={item.name}
-          className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col transition-colors duration-300 hover:bg-green-50"
+        <AnimatedContent
+          distance={100}
+          direction="horizontal"
+          reverse={false}
+          config={{ tension: 50, friction: 25 }}
+          initialOpacity={0.0}
+          animateOpacity
+          scale={1.0}
+          threshold={0.1}
         >
-          <img src={item.image} alt={item.name} className="h-48 w-full object-cover" />
-          <div className="p-6 flex flex-col flex-grow text-center">
-            <div className="flex-grow">
-              <h2 className="text-xl font-bold mb-3">{item.name}</h2>
-              <p className="text-gray-700 text-sm">{item.description}</p>
-            </div>
-            <div className="mt-6 flex justify-center">
-              <Link
-                to={`/instruments/${item.route}`}
-                className="font-medium hover:text-accent flex items-center space-x-1 rounded px-3 py-2 transition-colors"
-              >
-                <span>Read more</span>
-                <Icon icon="ci:chevron-right-duo" width={20} />
-              </Link>
+          <div
+            key={item.name}
+            className="bg-white rounded-lg shadow-md overflow-hidden flex flex-col transition-colors duration-300 hover:bg-green-50"
+          >
+            <img src={item.image} alt={item.name} className="h-48 w-full object-cover" />
+            <div className="p-6 flex flex-col flex-grow text-center">
+              <div className="flex-grow">
+                <h2 className="text-xl font-bold mb-3">{item.name}</h2>
+                <p className="text-gray-700 text-sm">{item.description}</p>
+              </div>
+              <div className="mt-6 flex justify-center">
+                <Link
+                  to={`/instruments/${item.route}`}
+                  className="font-medium hover:text-accent flex items-center space-x-1 rounded px-3 py-2 transition-colors"
+                >
+                  <span>Read more</span>
+                  <Icon icon="ci:chevron-right-duo" width={20} />
+                </Link>
+              </div>
             </div>
           </div>
-        </div>
+        </AnimatedContent>
       ))}
     </div>
   );
